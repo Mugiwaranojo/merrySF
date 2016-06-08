@@ -1,0 +1,46 @@
+ExpressionActions:
+    type: entity
+    table: expression_actions
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    manyToOne:
+        expression:
+            targetEntity: Expression
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                expression_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        area:
+            targetEntity: Area
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                area_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        action:
+            targetEntity: Action
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                action_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,10 @@
+_api:
+    resource: "@MerryCoreBundle/Resources/config/routing.yml"
+    prefix:   /api
+    
+_info:
+    resource: "@MerryInfoBundle/Resources/config/routing.yml"
+    prefix:   /info
+    
+_main:
+    resource: "@MerryFrontBundle/Resources/config/routing.yml"    

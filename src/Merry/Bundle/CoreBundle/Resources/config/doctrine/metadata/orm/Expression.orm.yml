@@ -1,0 +1,32 @@
+Expression:
+    type: entity
+    table: expression
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        sentence:
+            type: text
+            nullable: false
+        sentenceType:
+            type: string
+            length: 30
+            fixed: false
+            nullable: true
+            column: sentence_type
+        provider:
+            type: string
+            length: 30
+            fixed: false
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

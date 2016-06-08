@@ -1,0 +1,34 @@
+Merry\Bundle\CoreBundle\Entity\Area:
+    type: entity
+    table: area
+    repositoryClass: Merry\Bundle\CoreBundle\Repository\AreaRepository
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    manyToOne:
+        location:
+            targetEntity: Location
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                location_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,13 @@
+merry_front_homepage:
+    path:     /
+    defaults: { _controller: MerryFrontBundle:Default:index }
+    
+merry_ihm_homepage:
+    path:     /ihm
+    defaults: { _controller: MerryFrontBundle:Ihm:index }
+    
+merry_front_contact:
+    path:     /contact
+    defaults: { _controller: MerryFrontBundle:Contact:send }
+    requirements:
+        _method:  POST

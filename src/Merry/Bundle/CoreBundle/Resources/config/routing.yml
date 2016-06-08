@@ -1,0 +1,23 @@
+merry_core_listen:
+    path:     /listen
+    defaults: { _controller: MerryCoreBundle:Listen:receive }
+
+merry_core_get_areas:
+    path:     /areas
+    defaults: { _controller: MerryCoreBundle:Area:getAll }
+    
+merry_core_get_devices:
+    path:     /devices
+    defaults: { _controller: MerryCoreBundle:Device:getAll }
+    
+merry_core_get_device:
+    path:     /device/{deviceIdentifier}
+    defaults: { _controller: MerryCoreBundle:Device:getByIdentifier }
+    
+merry_core_command_device:
+    path:     /device/{deviceIdentifier}/{command}
+    defaults: { _controller: MerryCoreBundle:Device:command }
+
+merry_core_command_device_with_options:
+    path:     /device/{deviceIdentifier}/{command}/{options}
+    defaults: { _controller: MerryCoreBundle:Device:command }

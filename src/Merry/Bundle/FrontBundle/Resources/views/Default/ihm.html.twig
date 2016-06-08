@@ -1,0 +1,266 @@
+<html lang="fr" >
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MerryServices.net</title>
+    <!--Core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/highlight.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/assets/css/docs.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/jasny-bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/style-ihm.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<!-- Menu Start -->
+	<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+	  <a class="navmenu-brand" href="#">MerryServices.net</a>
+	  <ul class="nav navmenu-nav">
+		<li><a href="#listen_section">Accueil</a></li>
+		<li><a href="#devices_section">Devices</a></li>
+		<li><a href="#configuration_section">Configurations</a></li>
+	  </ul>
+	</nav>
+	<div class="navbar navbar-default navbar-fixed-top">
+	  <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	</div>
+	<!-- Menu End-->
+	<!-- Home Section Start -->
+	<section id="home_section">
+		<div class="welcome_section">
+			<div class="container">
+				<div class="row">
+					<div id="listen_section" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<div id="info">
+						  <p id="info_start">Cliquer sur le centre de l'image et parler.</p>
+						  <p id="info_speak_now">Parler maintenant</p>
+						  <p id="info_no_speech">Aucun mot détecté. Vous devez ajuster
+							<a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+							  la configuration de vôtre micro</a>.</p>
+						  <p id="info_no_microphone" style="display:none">
+							Aucun microphone trouvé. Assurez vous qu'il est bien brancher et qu'il est
+							<a href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892">
+							configurer correctement</a></p>
+						  <p id="info_allow">Cliquer sur "Autoriser" pour utiliser vôtre microphone.</p>
+						  <p id="info_denied">Permission to use microphone was denied.</p>
+						  <p id="info_blocked">Permission to use microphone is blocked. To change,
+							go to chrome://settings/contentExceptions#media-stream</p>
+						  <p id="info_upgrade">Web Speech API n'est pas supporté par vôtre navigateur.
+							 Upgrade to <a href="//www.google.com/chrome">Chrome</a>
+							 version 25 or later.</p>
+						</div>
+						
+						<div>
+							<button id="start_button" onclick="startButton(event)">
+								<img id="start_img" src="images/sphere.gif" alt="Start">
+							</button>
+						</div>
+						<div id="results">
+						  <span id="final_span" class="final"></span>
+						  <span id="interim_span" class="interim"></span>
+						  <p>
+						</div>
+					</div>
+					<!-- Devices Section Start -->
+					<div id="devices_section" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+						<ul>
+							<li>
+								<div class='device'>
+									<i class="material-icons">wb_incandescent</i>
+									<a href="#" data-toggle="popover" title="Paramètres Lumière" class="dimmer-setting">
+										<span>Lumière chambre</span>
+									</a>
+									<input id="switch-state1" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">computer</i>
+									<a href="#" data-toggle="popover" title="Paramètres PC" class="pc-setting">
+										<span>Vogue-Merry</span>
+									</a>
+									<input id="switch-state2" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">computer</i>
+									<a href="#" data-toggle="popover" title="Paramètres PC" class="pc-setting">
+										<span>Thousand-Sunny</span>
+									</a>
+									<input id="switch-state3" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">tv</i>
+									<a href="#" data-toggle="popover" title="Paramètres Mutimédia" class="multimedia-setting">
+										<span>ToshibaTV</span>
+									</a>
+									<input id="switch-state4" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">speaker</i>
+									<a href="#" data-toggle="popover" title="Paramètres Mutimédia" class="multimedia-setting">
+										<span>AmpliVSX</span>
+									</a>
+									<input id="switch-state5" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">device_hub</i>
+									<span>Prise routeur</span>
+									<input id="switch-state6" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">desktop_windows</i>
+									<span>Prise écran 1</span>
+									<input id="switch-state7" type="checkbox" checked>
+								</div>
+							</li>
+							<li>
+								<div class='device'>
+									<i class="material-icons">desktop_windows</i>
+									<span>Prise écran 2</span>
+									<input id="switch-state8" type="checkbox" checked>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- Devices Section End -->		
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Home Section End -->		
+	<!-- Configuration Section Start --> 
+	<section id="configuration_section">
+		<div class="configuration_section">
+			<div class="container">
+				<div class="row">
+					<div id="div_language">
+						<div> Langue : 
+						<select id="select_language" onchange="updateCountry()"></select>
+						&nbsp;&nbsp;
+						<select id="select_dialect"></select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Configuration Section End -->
+	
+	<!--Core js-->
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/highlight.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jasny-bootstrap.min.js"></script>
+    <script src="js/webspeech.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+		$('[data-toggle="popover"]').popover({
+			html: true,
+			content: function () {
+				return $("#panel-"+this.className).html();
+			}
+		});
+		
+		$(".device a").click(function(){
+			//$('[data-toggle="popover"]').popover("close");
+		});
+	});
+	
+	
+	function showValueDimmer(newValue)
+	{
+		$(".rangeDimmer").html(newValue);
+	}
+	</script>
+	
+	<!--Panel devices-->
+	<!--Panel dimmer-->
+	<div class='hidden' id="panel-dimmer-setting">
+		<input type="range" min="0" max="99" value="99" step="1" onchange="showValueDimmer(this.value)" />
+		<span class="rangeDimmer">99</span>
+	</div>
+	<!--Panel PC-->
+	<div class='hidden' id="panel-pc-setting">
+		<a href="#" title="Lecture"><i class="material-icons">play_arrow</i></a>
+		<a href="#" title="Pause"><i class="material-icons">pause</i></a>
+		<a href="#" title="Précedent"><i class="material-icons">fast_rewind</i></a>
+		<a href="#" title="Suivant"><i class="material-icons">fast_forward</i></a>
+		<a href="#" title="Plein écran"><i class="material-icons">aspect_ratio</i></a><br/>
+		<div class="dropdown">
+		  <button id="dLiveTV" type="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+			<i class="material-icons">live_tv</i>
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dLiveTV">
+			<ul class='listChannels'>
+				<li><button><img src="images/channels/tf1.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/france2.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/france3.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/france4.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/franceO.png" alt="logo"></button></li>				
+				<li><button><img src="images/channels/canalplus.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/m6.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/w9.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/itele.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/rmcdecouverte.png" alt="logo"></button></li>
+				<li><button><img src="images/channels/gameone.png" alt="logo"></button></li>
+			</ul>
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <button id="dPlaylist" type="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+			<i class="material-icons">queue_music</i>
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dPlaylist">
+			Music
+		  </div>
+		</div>
+		<div class="dropdown">
+		  <button id="dPrograms" type="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+			<i class="material-icons">power_settings_new</i>
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="dPrograms">
+			Progs
+		  </div>
+		</div>
+	</div>
+	<!--Panel Multimedia-->
+	<div class='hidden' id="panel-multimedia-setting">
+		<a href="#" title="AV"><i class="material-icons">present_to_all</i></a>
+		<a href="#" title="mute"><i class="material-icons">volume_off</i></a>
+		<a href="#" title="vol-"><i class="material-icons">volume_down</i></a>
+		<a href="#" title="vol+"><i class="material-icons">volume_up</i></a>
+	</div>
+	
+  </body>
+</html>

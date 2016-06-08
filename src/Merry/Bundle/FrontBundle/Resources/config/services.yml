@@ -1,0 +1,7 @@
+parameters:
+#    merry_front.example.class: Merry\Bundle\FrontBundle\Example
+
+services:
+#    merry_front.example:
+#        class: %merry_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

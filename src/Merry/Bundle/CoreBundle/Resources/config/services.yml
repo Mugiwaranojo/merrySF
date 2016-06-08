@@ -1,0 +1,79 @@
+parameters:
+    merry_core.area_repository.class: Merry\Bundle\CoreBundle\Repository\AreaRepository
+    merry_core.channel_repository.class: Merry\Bundle\CoreBundle\Repository\ChannelRepository
+    merry_core.device_repository.class: Merry\Bundle\CoreBundle\Repository\DeviceRepository
+    merry_core.action_repository.class: Merry\Bundle\CoreBundle\Repository\ActionRepository
+    merry_core.devicesactions_repository.class: Merry\Bundle\CoreBundle\Repository\DevicesActionsRepository
+    merry_core.expression_repository.class: Merry\Bundle\CoreBundle\Repository\ExpressionRepository
+    merry_core.expressionactions_repository.class: Merry\Bundle\CoreBundle\Repository\ExpressionActionsRepository
+    merry_core.listen_service.class: Merry\Bundle\CoreBundle\Services\ListenService
+    merry_core.area_service.class: Merry\Bundle\CoreBundle\Services\AreaService
+    merry_core.device_service.class: Merry\Bundle\CoreBundle\Services\DeviceService
+    merry_core.socketrequest_service.class: Merry\Bundle\CoreBundle\Services\SocketRequestService
+    merry_core.sshrequest_service.class: Merry\Bundle\CoreBundle\Services\SSHRequestService
+    merry_core.httpbasicrequest_service.class: Merry\Bundle\CoreBundle\Services\HttpBasicRequestService
+    merry_core.zwaverequest_service.class: Merry\Bundle\CoreBundle\Services\ZWaveRequestService
+    merry_core.pc_service.class: Merry\Bundle\CoreBundle\Services\PCService
+
+
+services:
+    merry_core.area_repository:
+        class: %merry_core.area_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:Area']
+    merry_core.channel_repository:
+        class: %merry_core.channel_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:Channel']
+    merry_core.device_repository:
+        class: %merry_core.device_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:Device']
+    merry_core.action_repository:
+        class: %merry_core.action_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:Action']
+    merry_core.devicesactions_repository:
+        class: %merry_core.devicesactions_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:DevicesActions']
+    merry_core.expression_repository:
+        class: %merry_core.expression_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:Expression']
+    merry_core.expressionactions_repository:
+        class: %merry_core.expressionactions_repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: ['MerryCoreBundle:ExpressionActions']
+    merry_core.listen_service:
+        class: %merry_core.listen_service.class%
+        arguments: ["@logger", "@service_container"]    # inject logger, container into constructor
+    merry_core.area_service:
+        class: %merry_core.area_service.class%
+        arguments: ["@logger", "@service_container"]    # inject logger, container into constructor
+    merry_core.device_service:
+        class: %merry_core.device_service.class%
+        arguments: ["@logger", "@service_container"]    # inject logger, container into constructor
+    merry_core.socketrequest_service:
+        class: %merry_core.socketrequest_service.class%
+        arguments: ["@logger"]    # inject logger service into constructor
+    merry_core.httpbasicrequest_service:
+        class: %merry_core.httpbasicrequest_service.class%
+        arguments: ["@logger"]    # inject logger service into constructor
+    merry_core.sshrequest_service:
+        class: %merry_core.sshrequest_service.class%
+        arguments: ["@logger"]    # inject logger service into constructor
+    merry_core.zwaverequest_service:
+        class: %merry_core.zwaverequest_service.class%
+        arguments: ["@logger", "@service_container"]    # inject logger, container into constructor
+    merry_core.pc_service:
+        class: %merry_core.pc_service.class%
+        arguments: ["@logger", "@service_container"]    # inject logger, container into constructor
+        

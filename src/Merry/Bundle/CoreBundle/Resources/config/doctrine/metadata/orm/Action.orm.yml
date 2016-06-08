@@ -1,0 +1,37 @@
+Action:
+    type: entity
+    table: action
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        frequency:
+            type: string
+            length: 30
+            fixed: false
+            nullable: true
+        started:
+            type: datetime
+            nullable: true
+        finished:
+            type: datetime
+            nullable: true
+        active:
+            type: boolean
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

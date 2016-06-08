@@ -1,0 +1,43 @@
+Merry\Bundle\CoreBundle\Entity\Channel:
+    type: entity
+    table: channel
+    repositoryClass: Merry\Bundle\CoreBundle\Repository\ChannelRepository
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        recognizervalue:
+            type: string
+            length: 120
+            fixed: false
+            nullable: false
+            column: recognizerValue
+        program:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        value:
+            type: text
+            nullable: false
+        isfavorite:
+            type: integer
+            unsigned: false
+            nullable: true
+            column: isFavorite
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

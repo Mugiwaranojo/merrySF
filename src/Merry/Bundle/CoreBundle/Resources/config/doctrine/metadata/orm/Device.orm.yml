@@ -1,0 +1,64 @@
+Device:
+    type: entity
+    table: device
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        identifier:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        name:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        status:
+            type: string
+            length: 30
+            fixed: false
+            nullable: true
+        deviceType:
+            type: string
+            length: 30
+            fixed: false
+            nullable: true
+            column: device_type
+        active:
+            type: boolean
+            nullable: true
+        favorite:
+            type: boolean
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    manyToOne:
+        area:
+            targetEntity: Area
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                area_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        parent:
+            targetEntity: Device
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                parent_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

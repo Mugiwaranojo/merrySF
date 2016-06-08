@@ -1,0 +1,35 @@
+Merry\Bundle\CoreBundle\Entity\Location:
+    type: entity
+    table: location
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: string
+            length: 30
+            fixed: false
+            nullable: false
+        latitude:
+            type: float
+            nullable: true
+        longitude:
+            type: float
+            nullable: true
+        altitude:
+            type: float
+            nullable: true
+        accurancy:
+            type: float
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

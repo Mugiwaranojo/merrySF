@@ -1,0 +1,7 @@
+merry_info_service_tts:
+    path:     /tts/{name}
+    defaults: { _controller: MerryInfoBundle:Default:tts }
+
+merry_info_service:
+    path:     /{name}
+    defaults: { _controller: MerryInfoBundle:Default:index }

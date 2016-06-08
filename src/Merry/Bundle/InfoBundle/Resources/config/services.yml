@@ -1,0 +1,14 @@
+parameters:
+    merry_info.alkanz_service.class: Merry\Bundle\InfoBundle\Services\AlKanzService
+    merry_info.programmetv_service.class: Merry\Bundle\InfoBundle\Services\ProgrammeTVService
+#    merry_info.example.class: Merry\Bundle\InfoBundle\Example
+
+services:
+    merry_info.alkanz_service:
+        class: %merry_info.alkanz_service.class%
+    merry_info.programmetv_service:
+        class: %merry_info.programmetv_service.class%
+        arguments: ["@logger", "@service_container"]    # inject logger, container into constructor
+#    merry_info.example:
+#        class: %merry_info.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

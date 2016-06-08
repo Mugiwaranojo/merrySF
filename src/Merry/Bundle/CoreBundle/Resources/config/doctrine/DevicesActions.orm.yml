@@ -1,0 +1,50 @@
+Merry\Bundle\CoreBundle\Entity\DevicesActions:
+    type: entity
+    table: devices_actions
+    repositoryClass: Merry\Bundle\CoreBundle\Repository\DevicesActionsRepository
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: true
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        command:
+            type: string
+            length: 30
+            fixed: false
+            nullable: true
+        delay:
+            type: integer
+            unsigned: false
+            nullable: true
+        args:
+            type: text
+            nullable: true
+        created:
+            type: datetime
+            nullable: true
+        updated:
+            type: datetime
+            nullable: true
+    manyToOne:
+        action:
+            targetEntity: Action
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                action_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        device:
+            targetEntity: Device
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                device_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
